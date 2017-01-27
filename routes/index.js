@@ -31,4 +31,17 @@ router.get('/happiness/:id', (req, res, next) => {
   });
 });
 
+router.post('/memorial', (req, res, next) => {
+  query.postDeadCat(req.body)
+    .returning('*')
+    .then(cat => {
+      res.json(cat)
+    });
+});
+
 module.exports = router;
+
+// findLiveCat(req.body)
+//   .then(cat => {
+//     res.json(cat);
+//   }
