@@ -11,7 +11,19 @@ function getAllLivingCats() {
   return knex('living_cat');
 }
 
+function getDeadCatById(id) {
+  return knex('dead_cat').where('id', id);
+}
+
+function getLivingCatById(id) {
+  return knex('living_cat').where('id', id);
+}
+
+
+
 module.exports = {
   getAllDeadCats,
-  getAllLivingCats
+  getAllLivingCats,
+  getDeadCatById,
+  getLivingCatById
 };
