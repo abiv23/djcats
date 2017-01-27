@@ -5,6 +5,7 @@ exports.up = function(knex, Promise) {
     table.text('name').notNullable();
     table.text('color').notNullable();
     table.text('type').notNullable();
+    table.text('image_url').notNullable();
     table.boolean('is_alive').notNullable().defaultTo(false);
     table.integer('owner_id').unsigned().references('owner.id').onDelete('cascade');
   });
